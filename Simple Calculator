@@ -1,0 +1,41 @@
+while True:
+
+    print("====== CALCULATOR ======")
+    print("1. Addition")
+    print("2. Subtraction")
+    print("3. Division")
+    print("4. Find Remainder")
+    print("5. Exit")
+
+    opInput = int(input("Choose: "))
+
+    match opInput:
+
+        case 1:
+            add1, add2 = map(int, input("Enter two numbers: ").split())
+            print("Addition: ", add1+add2)
+    
+        case 2:
+            sub1, sub2 = map(int, input("Enter two numbers: ").split())
+            print("Subtraction: ", sub1-sub2)
+
+        case 3:
+            div1, div2 = map(float, input("Enter two numbers: ").split())
+            if div2!=0:
+                print("Division: ", div1/div2)
+            else:
+                print("Not defined")
+
+        case 4:
+            mod1, mod2 = map(int, input("Enter two numbers: ").split())
+            if mod2!=0:
+                print("Remainder: ", mod1%mod2)
+            else:
+                print("Not defined")
+
+        case 5:
+            print("Exited T_T")
+            break
+
+        case _:
+            print("Please enter a valid choice ¬_¬")
