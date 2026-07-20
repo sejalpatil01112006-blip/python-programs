@@ -1,0 +1,110 @@
+import math
+
+
+def addition(a, b):
+    return a + b
+
+
+def subtraction(a, b):
+    return a - b
+
+
+def multiplication(a, b):
+    return a * b
+
+
+def division(a, b):
+    if b == 0:
+        return "Cannot divide by zero"
+    return a / b
+
+
+def remainder(a, b):
+    if b == 0:
+        return "Cannot find remainder with zero"
+    return a % b
+
+
+def power(a, b):
+    return a ** b
+
+
+
+while True:
+
+    print("\n====== CALCULATOR ======")
+    print("1. Addition")
+    print("2. Subtraction")
+    print("3. Multiplication")
+    print("4. Division")
+    print("5. Find Remainder")
+    print("6. Power")
+    print("7. Square Root")
+    print("8. Exit")
+
+
+    try:
+        choice = int(input("Choose an option: "))
+
+    except ValueError:
+        print("Please enter a valid number.")
+        continue
+
+
+
+    if choice == 8:
+        print("Calculator closed.")
+        break
+
+
+
+    try:
+
+        if choice == 7:
+
+            num = float(input("Enter number: "))
+
+            if num < 0:
+                print("Cannot find square root of a negative number.")
+            else:
+                print("Square Root:", math.sqrt(num))
+
+
+        elif choice in [1, 2, 3, 4, 5, 6]:
+
+            num1, num2 = map(
+                float,
+                input("Enter two numbers: ").split()
+            )
+
+
+            if choice == 1:
+                print("Addition:", addition(num1, num2))
+
+
+            elif choice == 2:
+                print("Subtraction:", subtraction(num1, num2))
+
+
+            elif choice == 3:
+                print("Multiplication:", multiplication(num1, num2))
+
+
+            elif choice == 4:
+                print("Division:", division(num1, num2))
+
+
+            elif choice == 5:
+                print("Remainder:", remainder(num1, num2))
+
+
+            elif choice == 6:
+                print("Power:", power(num1, num2))
+
+
+        else:
+            print("Invalid choice. Select between 1-8.")
+
+
+    except ValueError:
+        print("Please enter valid numbers.")
